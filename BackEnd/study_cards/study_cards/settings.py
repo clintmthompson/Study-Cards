@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'flashhcard_app.apps.FlashcardAppConfig',
+    'flashcard_app.apps.FlashcardAppConfig',
     'rest_framework'
 ]
 
@@ -63,12 +63,7 @@ WSGI_APPLICATION = 'study_cards.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 
 
 # Password validation
