@@ -39,7 +39,7 @@ class CardDetail(APIView):
 
     def put(self, request, pk):
         card = self.get_card(pk)
-        serializer = CardSerializer(data=request.data)
+        serializer = CardSerializer(card, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -80,7 +80,7 @@ class DeckDetail(APIView):
 
     def put(self, request, pk):
         deck = self.get_deck(pk)
-        serializer = DeckSerializer(data=request.data)
+        serializer = DeckSerializer(deck, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -90,4 +90,15 @@ class DeckDetail(APIView):
         deck = self.get_deck(pk)
         deck.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    class DeckContents(APIView):
+        def get_deck(self, pk):
+            try:
+                return Deck.objects.get(pk=pk)
+            except Deck.DoesNotExist:
+                raise Http404
+
+        def detail(self, request, pk):
+            deck = self.get_deck(pk)
+            return render(request, 'core/detail.html', {'deck': deck, 'card': Card.objects.filter(pk=pk)})
 
