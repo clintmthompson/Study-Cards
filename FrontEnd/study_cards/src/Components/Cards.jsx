@@ -2,21 +2,22 @@ import React from 'react';
 
 
 
-const Collection = (props) => {
+const Cards = (props) => {
 
 
     function displayCollection(){
         let results = (
 
 
-          props.collection[0].map((item) => (
+          props.cards[0].map((item) => (
           <div className="card text-center">
               <div className="card-body text-dark">
                   <h4 className="card-title">{item.name}</h4><br />
-                  <a href="#" className='btn btn-outline-primary'>View Collection</a>
+                  <a href="#" className='btn btn-outline-primary'>See Definition</a>
               </div>
           </div>
           )))
+
             return results
     }
 
@@ -26,11 +27,11 @@ const Collection = (props) => {
         
 
     return ( 
-        <div id='collection'>
-            <h1>Choose a collection</h1>
+        <div id='cards'>
+            <h1>Flash Cards</h1>
             {displayCollection()}
         </div>
      );
 }
  
-export default Collection;
+export default Cards;

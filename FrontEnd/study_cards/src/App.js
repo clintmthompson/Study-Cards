@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import Collection from './Components/Collection';
 import React, { Component } from 'react';
 import axios from 'axios'
+import Cards from './Components/Cards';
 
 class App extends Component {
   constructor(props) {
@@ -12,14 +13,42 @@ class App extends Component {
         [
           {
               "id": 1,
-              "name": "Foods"
+              "name": "..."
           },
           {
               "id": 2,
-              "name": "Javascript"
-          }
+              "name": "..."
+          },
+          {
+              "id": 3,
+              "name": "..."
+          },
+          {
+            "id": 4,
+            "name": "..."
+         }
       ]
-      ]
+      ],
+      cards: [[
+        {
+            "id": 1,
+            "deck": 1,
+            "word": "Pizza",
+            "definition": "something you eat"
+        },
+        {
+            "id": 4,
+            "deck": 1,
+            "word": "big burger",
+            "definition": "big sandwich"
+        },
+        {
+            "id": 5,
+            "deck": 2,
+            "word": "Variable",
+            "definition": "Holds Data"
+        }
+    ]]
      }
   }
 
@@ -41,7 +70,10 @@ componentDidMount(){
     return ( 
       <div className="App">
       <Header />
-      <Collection collection={this.state.collection}/>
+      <div className='float-container'>
+        <Collection collection={this.state.collection}/>
+        <Cards cards={this.state.cards}/>
+      </div>
     </div>
      );
   }
