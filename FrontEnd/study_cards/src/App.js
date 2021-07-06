@@ -33,21 +33,10 @@ class App extends Component {
         {
             "id": 1,
             "deck": 1,
-            "word": "Pizza",
+            "word": "Cards From Your Selected Collection Will Appear Here",
             "definition": "something you eat"
         },
-        {
-            "id": 4,
-            "deck": 1,
-            "word": "big burger",
-            "definition": "big sandwich"
-        },
-        {
-            "id": 5,
-            "deck": 2,
-            "word": "Variable",
-            "definition": "Holds Data"
-        }
+        
     ]]
      }
   }
@@ -70,10 +59,8 @@ componentDidMount(){
     return ( 
       <div className="App">
       <Header />
-      <div className='float-container'>
         <Collection collection={this.state.collection}/>
         <Cards cards={this.state.cards}/>
-      </div>
     </div>
      );
   }

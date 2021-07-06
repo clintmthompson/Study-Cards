@@ -5,7 +5,6 @@ const Header = (props) => {
     return (
         
         <div id='header'>
-
         <h1>Study Cards</h1>
         </div> 
      );

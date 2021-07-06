@@ -6,13 +6,14 @@ const Cards = (props) => {
 
 
     function displayCollection(){
+        console.log(props.cards[0][0].word)
         let results = (
 
 
-          props.cards[0].map((item) => (
+          props.cards.map((item) => (
           <div className="card text-center">
               <div className="card-body text-dark">
-                  <h4 className="card-title">{item.name}</h4><br />
+                  <p className="card-title">{item[0].word}</p><br />
                   <a href="#" className='btn btn-outline-primary'>See Definition</a>
               </div>
           </div>
