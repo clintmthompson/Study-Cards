@@ -33,8 +33,11 @@
 
 .card{
 
-  width: 50%;
+  width: 100%;
   margin: 20px;
+  transition: all 0.9s;
+  height: 200px;
+
   
 }
 
@@ -47,14 +50,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 20px;
-  width: 48%;
+  padding: 50px;
+  width: 40%;
   min-height: 100%;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin: 20px;
   border-radius: 15px;
 }
-
-
-
 

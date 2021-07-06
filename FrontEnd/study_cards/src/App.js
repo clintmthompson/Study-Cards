@@ -34,8 +34,14 @@ class App extends Component {
             "id": 1,
             "deck": 1,
             "word": "Cards From Your Selected Collection Will Appear Here",
-            "definition": "something you eat"
+            "definition": "Definitions will be displayed here"
         },
+        {
+          "id": 2,
+          "deck": 2,
+          "word": "Cards From Your Selected Collection Will Appear Here",
+          "definition": "Definitions will be displayed here"
+      },
         
     ]]
      }
