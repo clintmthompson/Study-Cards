@@ -16,28 +16,42 @@ class Cards extends Component {
     handleClick(event) {
       event.preventDefault();
       this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-      console.log(this.state)
+    }
+
+    displayCollection(){
+        console.log(this.state.cards)
+        let results = (
+          this.state.cards[0].map((item, index) => (
+            <div>
+                    <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+                        
+                        <div className="card text-center">
+                            <div className="card-body text-dark">
+                                <h3>{item.word}</h3> <br />
+                                <button className='btn btn-outline-primary' onClick={this.handleClick}>View definition</button> <br />
+                                <p>Card Number {index+1} / {this.state.cards[0].length}</p>
+                            </div>
+                        </div>
+
+                        <div className="card text-center">
+                            <div className="card-body text-dark">
+                                <h3>{item.definition}</h3> <br />
+                                <button className='btn btn-outline-primary' onClick={this.handleClick}>View Word</button> <br />
+                                <p>Card Number {index+1} / {this.state.cards[0].length}</p>
+                            </div>
+                        </div>
+                    </ReactCardFlip>
+                    </div>
+          ))
+          )
+          return results
     }
   
     render() {
       return (
         <div id='cards'>
-        <div className="card text-center">
-        <div className="card-body text-dark">
-        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-            <div>
-            {this.state.cards[0][0].word} <br />
-            <button className='btn btn-outline-primary' onClick={this.handleClick}>See Definition</button>
-            </div>
-
-            <div>
-            {this.state.cards[0][0].definition} <br />
-            <button className='btn btn-outline-primary' onClick={this.handleClick}>See word</button>
-            </div>
-        
-        </ReactCardFlip>
-        </div>
-        </div>
+            <h1>Flash Cards</h1>
+            {this.displayCollection()}
         </div>
       )
     }

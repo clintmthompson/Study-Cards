@@ -33,10 +33,9 @@
 
 .card{
 
-  width: 100%;
   margin: 20px;
-  transition: all 0.9s;
   height: 200px;
+  width: 100%;
 
   
 }
@@ -51,7 +50,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 50px;
-  width: 40%;
+  width: 47%;
   min-height: 100%;
   margin: 20px;
   border-radius: 15px;
