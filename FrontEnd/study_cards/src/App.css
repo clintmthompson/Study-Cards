@@ -50,9 +50,21 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 50px;
+  padding-top: 400px;
   width: 47%;
-  min-height: 100%;
+  height: 400px;
   margin: 20px;
+  margin-top: 85px;
   border-radius: 15px;
+
+
+}
+
+#cards .card{
+  margin: 0px;
+  margin-bottom: 150px;
+  margin-top: 40%;
+  height: 100%;
+  width: 100%;
 }
 

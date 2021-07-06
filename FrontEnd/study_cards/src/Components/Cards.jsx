@@ -27,16 +27,16 @@ class Cards extends Component {
                         
                         <div className="card text-center">
                             <div className="card-body text-dark">
-                                <h3>{item.word}</h3> <br />
-                                <button className='btn btn-outline-primary' onClick={this.handleClick}>View definition</button> <br />
+                                <h3>{item.word}</h3> 
+                                <button className='btn btn-outline-primary' onClick={this.handleClick}>View definitions</button> <br /><br />
                                 <p>Card Number {index+1} / {this.state.cards[0].length}</p>
                             </div>
                         </div>
 
                         <div className="card text-center">
                             <div className="card-body text-dark">
-                                <h3>{item.definition}</h3> <br />
-                                <button className='btn btn-outline-primary' onClick={this.handleClick}>View Word</button> <br />
+                                <h3>{item.definition}</h3> 
+                                <button className='btn btn-outline-primary' onClick={this.handleClick}>Hide definitions</button> <br /><br />
                                 <p>Card Number {index+1} / {this.state.cards[0].length}</p>
                             </div>
                         </div>
@@ -49,7 +49,7 @@ class Cards extends Component {
   
     render() {
       return (
-        <div id='cards'>
+        <div id='cards' className='overflow-auto'>
             <h1>Flash Cards</h1>
             {this.displayCollection()}
         </div>
