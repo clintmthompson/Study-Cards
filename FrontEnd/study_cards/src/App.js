@@ -52,9 +52,6 @@ class App extends Component {
   this.setState({
     cards: [result]
 });
-
-console.log("Current State:")
-console.log(this.state.cards)
 }
 
   getCollection = async () => {
@@ -66,8 +63,6 @@ console.log(this.state.cards)
 
 componentDidMount(){
   this.getCollection();
-  console.log("Current State:")
-  console.log(this.state.cards)
 }
 
   render() { 
@@ -76,7 +71,7 @@ componentDidMount(){
       <Header />
         <Collection collection={this.state.collection} handleSubmit={this.handleSubmit}/>
         <Cards cards={this.state.cards}/>
-        <AddCard />
+        <AddCard cards={this.state.cards}/>
     </div>
      );
   }
