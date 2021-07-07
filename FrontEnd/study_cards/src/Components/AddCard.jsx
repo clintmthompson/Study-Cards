@@ -7,7 +7,17 @@ class AddCard extends Component {
     }
     render() { 
         return ( 
-            <h1 style={{color: 'white'}}>Add Card to Collection</h1>
+        <div style={{color: 'white'}}>
+            <h1>Add Card to Collection</h1>
+            <form onSubmit={(event) => this.handleSubmit(event)}>
+                <label htmlFor="word">New word: </label>
+                    <input type="text" name="word"  onChange={this.handleChange} value={this.state.word}/><br />
+                <label htmlFor="definition">Definition: </label>
+                    <input type="text" name="definition" onChange={this.handleChange} value={this.state.definition}/><br />
+                <button className='btn btn-info' type='submit'>Add to Collection</button>
+            </form>
+               
+        </div>
          );
     }
 }
