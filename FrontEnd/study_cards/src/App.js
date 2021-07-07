@@ -4,6 +4,7 @@ import Collection from './Components/Collection';
 import React, { Component } from 'react';
 import axios from 'axios'
 import Cards from './Components/Cards';
+import AddCard from './Components/AddCard';
 
 class App extends Component {
   constructor(props) {
@@ -75,6 +76,7 @@ componentDidMount(){
       <Header />
         <Collection collection={this.state.collection} handleSubmit={this.handleSubmit}/>
         <Cards cards={this.state.cards}/>
+        <AddCard />
     </div>
      );
   }

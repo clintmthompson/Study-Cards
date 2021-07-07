@@ -6,7 +6,9 @@ class AddCard extends Component {
         this.state = {  }
     }
     render() { 
-        return (  );
+        return ( 
+            <h1 style={{color: 'white'}}>Add Card to Collection</h1>
+         );
     }
 }
  
