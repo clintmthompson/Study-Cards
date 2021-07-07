@@ -2,8 +2,7 @@ import React from 'react';
 
 const Header = (props) => {
 
-    return (
-        
+    return (        
         <div id='header'>
         <h1>Study Cards</h1>
         </div> 

@@ -50,7 +50,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 50px;
-  padding-top: 400px;
+  padding-top: 380px;
   width: 47%;
   height: 400px;
   margin: 20px;
@@ -63,7 +63,7 @@
 #cards .card{
   margin: 0px;
   margin-bottom: 150px;
-  margin-top: 40%;
+  margin-top: 10%;
   height: 100%;
   width: 100%;
 }

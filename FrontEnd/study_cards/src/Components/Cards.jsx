@@ -8,9 +8,9 @@ class Cards extends Component {
       super();
         this.state = {
         isFlipped: false,
-        cards: props.cards
       };
       this.handleClick = this.handleClick.bind(this);
+      this.displayCollection = this.displayCollection.bind(this);
     }
   
     handleClick(event) {
@@ -19,17 +19,17 @@ class Cards extends Component {
     }
 
     displayCollection(){
-        console.log(this.state.cards)
+        
         let results = (
-          this.state.cards[0].map((item, index) => (
-            <div>
+          this.props.cards[0].map((item, index) => (
+            <div key={item+index}>
                     <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
                         
                         <div className="card text-center">
                             <div className="card-body text-dark">
                                 <h3>{item.word}</h3> 
                                 <button className='btn btn-outline-primary' onClick={this.handleClick}>View definitions</button> <br /><br />
-                                <p>Card Number {index+1} / {this.state.cards[0].length}</p>
+                                <p>Card Number {index+1} / {this.props.cards[0].length}</p>
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@ class Cards extends Component {
                             <div className="card-body text-dark">
                                 <h3>{item.definition}</h3> 
                                 <button className='btn btn-outline-primary' onClick={this.handleClick}>Hide definitions</button> <br /><br />
-                                <p>Card Number {index+1} / {this.state.cards[0].length}</p>
+                                <p>Card Number {index+1} / {this.props.cards[0].length}</p>
                             </div>
                         </div>
                     </ReactCardFlip>
@@ -49,8 +49,7 @@ class Cards extends Component {
   
     render() {
       return (
-        <div id='cards' className='overflow-auto'>
-            <h1>Flash Cards</h1>
+        <div id='cards' className='overflow-auto' >
             {this.displayCollection()}
         </div>
       )

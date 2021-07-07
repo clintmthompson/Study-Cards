@@ -14,19 +14,7 @@ class App extends Component {
           {
               "id": 1,
               "name": "..."
-          },
-          {
-              "id": 2,
-              "name": "..."
-          },
-          {
-              "id": 3,
-              "name": "..."
-          },
-          {
-            "id": 4,
-            "name": "..."
-         }
+          }
       ]
       ],
       cards: [[
@@ -47,25 +35,45 @@ class App extends Component {
      }
   }
 
+  handleSubmit = async (event, id) => {
+    event.preventDefault()
+    let response = await axios.get(`http://127.0.0.1:8000/card/`);
+
+
+    let result =(
+    response.data.filter(function (item) {
+      if(item.deck === id){
+          return true;
+      }
+      return false;
+  }))
+
+  this.setState({
+    cards: [result]
+});
+
+console.log("Current State:")
+console.log(this.state.cards)
+}
+
   getCollection = async () => {
     let response =await axios.get(`http://127.0.0.1:8000/deck/`);
-    console.log(response.data)
     this.setState({
         collection: [response.data]
     });
-    console.log('test', this.state.collection[0][0].name)
 }
 
 componentDidMount(){
   this.getCollection();
-  console.log(this.state.collection[0])
+  console.log("Current State:")
+  console.log(this.state.cards)
 }
 
   render() { 
     return ( 
       <div className="App">
       <Header />
-        <Collection collection={this.state.collection}/>
+        <Collection collection={this.state.collection} handleSubmit={this.handleSubmit}/>
         <Cards cards={this.state.cards}/>
     </div>
      );
